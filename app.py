@@ -62,7 +62,9 @@ st.write("Corresponding Symbols:", selected_stock_symbols)
 # Downloading stock data
 stocks_data_list = []
 start = datetime.datetime(2015, 1, 1)
-end = datetime.datetime(2023, 1, 1)
+# Set the end date to the current date
+end = datetime.datetime.now()
+
 
 st.write("")
 st.write("")
@@ -85,9 +87,9 @@ if selected_stock_symbols and st.button("Run", key='centered_button'):
     expected_returns_mean = monthly_returns.mean() # average of monthly returns
 
     # Run the genetic algorithm
-    num_portfolios = 5000
-    generations = 40
-    mutation_rate = 0.1
+    num_portfolios = 3000
+    generations = 50
+    mutation_rate = 0.3
 
 
     # stock_scores = [random.uniform(0, 1) for _ in range(len(selected_stock_symbols))]
